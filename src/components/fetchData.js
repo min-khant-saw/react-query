@@ -1,13 +1,13 @@
 import axios from "axios";
 
 export const url = axios.create({
-  baseURL: "http://localhost:8000",
+  baseURL: "https://jsonplaceholder.typicode.com",
 });
 
 const fetchData = async ({ pageParam = 1 }) => {
   // const data = await url.get(`/posts?_page=${pageParam}`);
   // return data.data;
-  const data = await url.get(`/posts`);
+  const data = await url.get(`/posts?_page=${pageParam}`);
   return data.data;
 };
 
